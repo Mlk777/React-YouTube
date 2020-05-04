@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "//React-YouTube/static/css/main.f23388ff.chunk.css",
+    "main.js": "//React-YouTube/static/js/main.63147681.chunk.js",
+    "main.js.map": "//React-YouTube/static/js/main.63147681.chunk.js.map",
+    "runtime-main.js": "//React-YouTube/static/js/runtime-main.eb5bfbc4.js",
+    "runtime-main.js.map": "//React-YouTube/static/js/runtime-main.eb5bfbc4.js.map",
+    "static/js/2.88d520aa.chunk.js": "//React-YouTube/static/js/2.88d520aa.chunk.js",
+    "static/js/2.88d520aa.chunk.js.map": "//React-YouTube/static/js/2.88d520aa.chunk.js.map",
+    "index.html": "//React-YouTube/index.html",
+    "precache-manifest.a04962ed5527c047817158990c0e4ba5.js": "//React-YouTube/precache-manifest.a04962ed5527c047817158990c0e4ba5.js",
+    "service-worker.js": "//React-YouTube/service-worker.js",
+    "static/css/main.f23388ff.chunk.css.map": "//React-YouTube/static/css/main.f23388ff.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb5bfbc4.js",
+    "static/js/2.88d520aa.chunk.js",
+    "static/css/main.f23388ff.chunk.css",
+    "static/js/main.63147681.chunk.js"
+  ]
+}
