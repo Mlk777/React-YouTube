@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './assets/global.css';
+import './assets/main.css';
+import youtube from './api/youtube';
+import Navbar from './Components/Navbar';
+import Videos from './Components/Videos';
 
-function App() {
+const App = () => {
+  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [loading, setLoading] = useState('true');
+
+  const videoSelect = video => {
+    setSelectedVideo(video);
+  };
+
+  const searchVideos = async searchTerm => {
+    try {
+      const res = await youtube.get('search', {
+        params: {
+          part: 'snippet',
+          maxResults: 11,
+          key: 'Your_API_KEY',
+          q: searchTerm,
+        },
+      });
+      setVideos(res.data.items);
+      setSelectedVideo(res.data.items[0]);
+      setLoading(false);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar searchVideos={searchVideos} />
+      <Videos
+        mainVideo={selectedVideo}
+        videos={videos}
+        videoSelect={videoSelect}
+        loading={loading}
+      />
+    </>
   );
-}
+};
 
 export default App;
